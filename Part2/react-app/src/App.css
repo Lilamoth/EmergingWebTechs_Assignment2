@@ -1,5 +1,5 @@
 body {
-  background: url('./backgroundimg2.jpg') no-repeat center center fixed;
+  background: url('./backgroundimg4.jpg') no-repeat center center fixed;
   background-size: cover;
   
 }
@@ -41,6 +41,7 @@ body {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  content: "Real Estate Price Predictor"; /* Update title */
 }
 
 .App-link {
@@ -54,4 +55,34 @@ body {
   to {
     transform: rotate(360deg);
   }
+}
+
+.app-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 100vh; /* Make the container take the full height of the viewport */
+}
+
+.form-container {
+  flex: 1;
+  margin-right: 20px;
+  overflow-y: auto; /* Allow scrolling if content overflows */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7)); /* Gradient background */
+  padding: 20px; /* Add padding for better spacing */
+  border-radius: 10px; /* Rounded corners */
+}
+
+.data-visualization-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center vertically */
+  padding-top: 50px; /* Add space on top of the chart */
+  overflow-y: auto; /* Allow scrolling if content overflows */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7)); /* Gradient background */
+  padding: 20px; /* Add padding for better spacing */
+  border-radius: 10px; /* Rounded corners */
+  margin-top: 50px; /* Move the chart lower */
 }

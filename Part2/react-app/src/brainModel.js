@@ -23,7 +23,8 @@ net.train(trainingData, {
   learningRate: 0.01,
 });
 
-export function predictPrice(formData) {
+export function predictPrice(formData, model) {
+  // Define and return the logic to predict price based on formData and model
   const normalizedInput = {
     area: formData.area / 2000,
     bedrooms: formData.bedrooms / 5,
@@ -32,11 +33,12 @@ export function predictPrice(formData) {
     age: formData.age / 30,
   };
 
-  const output = net.run(normalizedInput);
+  const output = model.run(normalizedInput);
   return output.price * 500000;
 }
 
-export function getPredictions() {
+export function getPredictions(model, inputData) {
+  // Define and return predictions based on the model and inputData
   return data.map((item) => {
     const normalizedInput = {
       area: item.area / 2000,
@@ -45,7 +47,7 @@ export function getPredictions() {
       location: item.location / 2,
       age: item.age / 30,
     };
-    const output = net.run(normalizedInput);
+    const output = model.run(normalizedInput);
     return {
       actual: item.price,
       predicted: output.price * 500000,
@@ -53,15 +55,18 @@ export function getPredictions() {
   });
 }
 
-// Add these methods to handle model storage
-let trainedModel = null; // Define the trainedModel variable
-
-export function getModel() {
-  // Assuming you have a trained model object
-  return trainedModel; // Replace with your actual model object
+export function handlePredictPriceClick(formData) {
+  const model = net; // Use the trained neural network directly
+  return predictPrice(formData, model);
 }
 
-export function loadModel(model) {
-  // Assuming you can load the model from a JSON object
-  trainedModel = model; // Replace with your actual model loading logic
+export function trainModel() {
+  // Re-add the trainModel function
+  net.train(trainingData, {
+    iterations: 2000,
+    log: true,
+    logPeriod: 100,
+    learningRate: 0.01,
+  });
+  return net;
 }
