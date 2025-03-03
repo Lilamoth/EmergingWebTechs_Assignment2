@@ -15,10 +15,10 @@ This repository contains two projects:
 ### Real Estate Price Prediction App:
 - **Frontend**: React.js
 - **Machine Learning**: Brain.js (for neural network)
-- **Styling**: Bootstrap (or Tailwind, depending on your choice)
-- **Data Visualization**: Chart.js or Recharts
+- **Styling**: Bootstrap
+- **Data Visualization**: Chart.js
 - **Persistent Storage**: LocalStorage or IndexedDB
-- **Deployment**: Netlify/Vercel/GitHub Pages
+- **Deployment**:GitHub Pages
 
 ## How to Run Locally
 
@@ -66,13 +66,7 @@ This repository contains two projects:
 ## Technologies Used
 
 ### Self-Driving Car Tutorial:
-- Include the libraries/tools you used, such as Python, OpenCV, TensorFlow, etc.
-
-### Real Estate Price Prediction App:
-- **React.js** for building the user interface.
-- **Brain.js** for the neural network model.
-- **Chart.js or Recharts** for data visualization.
-- **Bootstrap/Tailwind CSS** for styling.
+- No Libraries used
 
 ## Data Collection & Preprocessing
 
